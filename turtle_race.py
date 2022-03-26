@@ -19,8 +19,10 @@ for color in colors:
     new_turtle.goto(x=-540, y=y_coord)
     racers.append(new_turtle)
 
-if player_bet:  # Race starts only when user enters the bet
+if player_bet in colors:  # Race starts only when user enters the bet i.e in this case non-empty string
     race_start = True
+else:
+    print("Sorry your input was invalid")
 
 while race_start:
     for racer in racers:
@@ -32,7 +34,7 @@ while race_start:
             else:
                 print(f"Sorry. {winner} turtle won the race.")
 
-        random_sprint = random.randint(0, 5)
+        random_sprint = random.randint(1, 5)
         racer.forward(random_sprint)
 
 
